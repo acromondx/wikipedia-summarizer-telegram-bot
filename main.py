@@ -27,8 +27,8 @@ def wikipedia_page():
     try:
         result = wikipedia.summary(query, sentences=2, auto_suggest=False)
     except wikipedia.exceptions.DisambiguationError as e:
-        # na = e.options
-        na = create_disambiguation_keyboard(e.options)
+        na = e.options
+        #na = create_disambiguation_keyboard(e.options)
 
         return f"""
                     Please specify your query for {query}:
